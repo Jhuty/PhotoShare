@@ -4,10 +4,6 @@ volumes:
   db-app:
 
 services:
-  # command and volumes are added to enable live reloading
-  command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-  volumes:
-    - .:/app
   web:
     build:
       context: .

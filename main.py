@@ -2,7 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from src.routes import auth
 from src.middleware.security_middleware import TokenBlacklistMiddleware
-
+from src.routes import rating, search, filter
 
 app = FastAPI()
 
