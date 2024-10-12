@@ -46,3 +46,14 @@ class TokenModel(BaseModel):
     access_token: str
     refresh_token: str
     token_type: str = "bearer"
+
+class RatingCreate(BaseModel):
+    rating: int
+
+class Rating(RatingCreate):
+    id: int
+    user_id: int
+    photo_id: int
+
+    class Config:
+        orm_mode = True

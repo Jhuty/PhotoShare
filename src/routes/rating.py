@@ -4,8 +4,10 @@ from src import schemas
 from src.database.models import User
 from database.db import get_db 
 from src.services.rating import add_rating
+from src.services.auth import get_current_user
 
 router = APIRouter()
+
 
 # Добавить рейтинг
 @router.post("/photos/{photo_id}/rate", response_model=schemas.Rating)
