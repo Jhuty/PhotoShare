@@ -12,7 +12,6 @@
 - !!Don't forget to do `docker compose down` after you've done with your development and want to restart
 
 
-
 # based on poetry interpreter
 poetry install(poetry update)
 
