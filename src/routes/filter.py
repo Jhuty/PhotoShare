@@ -1,7 +1,7 @@
 from fastapi import APIRouter, FastAPI, Depends, Query
 from sqlalchemy.orm import Session
 from services.filter import filter_photos
-from database.db import get_db 
+from src.database.db import get_db 
 
 router = APIRouter()
 

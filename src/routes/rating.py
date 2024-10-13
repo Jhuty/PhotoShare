@@ -4,16 +4,16 @@ from src import schemas
 from src.database.models import User
 from src.database.db import get_db 
 from src.services.rating import add_rating
-# from src.services.auth import get_current_user
+from src.services.auth import get_current_user
 
 
 router = APIRouter()
 
 
 # Добавить рейтинг
-# @router.post("/photos/{photo_id}/rate", response_model=schemas.Rating)
-# def rate_photo(photo_id: int, rating: schemas.RatingCreate, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
-#     return add_rating(db=db, photo_id=photo_id, rating=rating, user_id=current_user.id)
+@router.post("/photos/{photo_id}/rate", response_model=schemas.Rating)
+def rate_photo(photo_id: int, rating: schemas.RatingCreate, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
+    return add_rating(db=db, photo_id=photo_id, rating=rating, user_id=current_user.id)
 
 # Получить средний рейтинг фотографии
 @router.get("/photos/{photo_id}/average-rating", response_model=float)
